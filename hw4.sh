@@ -6,3 +6,7 @@ DATAFILE="/scratch/transaction.zip"
 unzip -p ${DATAFILE} | 
     head |
     cat > result.txt
+
+unzip -p ${DATAFILE} | 
+    head -n 2 |
+    cat > result2.txt
