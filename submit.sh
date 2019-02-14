@@ -4,7 +4,7 @@
 #SBATCH --partition=staclass
 
 # Use two cores to get some pipeline parallelism
-#SBATCH --ntasks=2
+#SBATCH --cpus-per-task=2
 
 # Give the job a name
 #SBATCH --job-name=hw4
