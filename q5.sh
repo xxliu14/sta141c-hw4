@@ -6,6 +6,7 @@ TOT_OBLIGATION=8
 DESCRIPTION=25
 unzip -p ${DATAFILE} | 
 	cut --delimiter=, --fields=${TOT_OBLIGATION},${DESCRIPTION} |
+	awk '$2!=""' |
 	sort --field-separator=, --key=1,1 --reverse --numeric-sort |
-	head -n20|
-	cat > largest20.csv
+	head -n50|
+	cat > largest50.csv
