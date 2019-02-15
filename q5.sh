@@ -8,5 +8,9 @@ unzip -p ${DATAFILE} |
 	cut --delimiter=, --fields=${TOT_OBLIGATION},${DESCRIPTION} |
 	awk '$2!=""' |
 	sort --field-separator=, --key=1,1 --reverse --numeric-sort |
-	head -n50|
+	head -n50 |
 	cat > largest50.csv
+# find unique values
+cat largest50.csv | 
+	uniq |
+	cat > unique_large.csv

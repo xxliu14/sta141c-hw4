@@ -38,6 +38,11 @@ TOT_OBLIGATION=8
 DESCRIPTION=25
 unzip -p ${DATAFILE} | 
 	cut --delimiter=, --fields=${TOT_OBLIGATION},${DESCRIPTION} |
-	sort --field-separator=, --key=1 --numeric-sort --reverse |
-	head |
-	cat > largest.csv
+	awk '$2!=""' |
+	sort --field-separator=, --key=1,1 --reverse --numeric-sort |
+	head -n50 |
+	cat > largest50.csv
+# find unique values
+cat largest50.csv | 
+	uniq |
+	cat > unique_large.csv
