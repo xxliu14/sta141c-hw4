@@ -3,13 +3,15 @@
 # Use the staclass partition. Only applies if you are in STA141C
 #SBATCH --partition=staclass
 
-# Use two cores to get some pipeline parallelism MEOW
+# Use two cores to get some pipeline parallelism
 #SBATCH --cpus-per-task=2
 
 # Give the job a name
-#SBATCH --job-name=hw4_from_a_sad_windows_user
+#SBATCH --job-name=hw4
 
 # #SBATCH --mail-type=END
 # #SBATCH --mail-user=
 
-bash hw4.sh
+export DATAFILE="/scratch/transaction.zip"
+
+srun bash hw4.sh

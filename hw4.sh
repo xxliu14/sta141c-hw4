@@ -2,8 +2,6 @@ DATAFILE="/scratch/transaction.zip"
 # For testing from head node:
 #DATAFILE="/group/staclassgrp/transaction.zip"
 
-#DATAFILE="/group/staclassgrp/transaction.zip"
-
 # 1.1
 unzip -p ${DATAFILE} |
 	head -1 |
@@ -26,23 +24,21 @@ unzip -p ${DATAFILE} |
 
 # 1.4
 #ref:https://stackoverflow.com/questions/19602181/how-to-extract-one-column-of-a-csv-file
-# found 18th col
+# agency id : col 18
+AGC_ID=18
 unzip -p ${DATAFILE} | 
-	cut -d ','  -f18 |
+	cut -d ','  -f{AGC_ID} |
 	sort -n |
 	uniq |
 	cat > funding_agencies_set.txt
 
 #1.5
 # obli: col 8, decri: col 25
+TOT_OB=8
+DESCRIPTION=25
 unzip -p ${DATAFILE} | 
-	awk -F "," '{print $25, " : ", $8}' |
-	sort -k8 -nr |
+	cut -d ',' -f{TOT_OB,DESCRIPTION} |
+	sort -k{TOT_OB} -nr |
 	head |
 	cat > largest.csv
- 
-
-
-
-
 
