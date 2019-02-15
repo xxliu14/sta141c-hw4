@@ -1,11 +1,10 @@
-# 1.5
-DATAFILE="/scratch/transaction.zip"
-# 1.4
-#ref:https://stackoverflow.com/questions/19602181/how-to-extract-one-column-of-a-csv-file
-# agency id : col 18
-AGC_ID=18
+#1.5
+# ref: https://ss64.com/bash/sort.html
+# total obligation: col 8, decription: col 25
+TOT_OBLIGATION=8
+DESCRIPTION=25
 unzip -p ${DATAFILE} | 
-	cut --delimiter=, --fields=${AGC_ID} |
-	sort --numeric-sort |
-	uniq |
-	cat > funding_agencies_set.txt
+	cut --delimiter=, --fields=${TOT_OBLIGATION},${DESCRIPTION} |
+	sort --key=${TOT_OBLIGATION} -nr |
+	head |
+	cat > largest.csv
