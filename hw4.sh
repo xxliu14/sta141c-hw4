@@ -38,7 +38,6 @@ TOT_OBLIGATION=8
 DESCRIPTION=25
 unzip -p ${DATAFILE} | 
 	cut --delimiter=, --fields=${TOT_OBLIGATION},${DESCRIPTION} |
-	sort --key=${TOT_OBLIGATION} -nr |
+	sort --field-separator=, --key=1 --numeric-sort --reverse |
 	head |
 	cat > largest.csv
-
