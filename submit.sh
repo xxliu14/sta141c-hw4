@@ -7,7 +7,7 @@
 #SBATCH --cpus-per-task=2
 
 # Give the job a name
-#SBATCH --job-name=hw4
+#SBATCH --job-name=hw4sad
 
 # #SBATCH --mail-type=END
 # #SBATCH --mail-user=
