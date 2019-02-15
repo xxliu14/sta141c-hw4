@@ -1,3 +1,4 @@
+DATAFILE="/scratch/transaction.zip"
 #1.5
 # ref: https://ss64.com/bash/sort.html
 # total obligation: col 8, decription: col 25
