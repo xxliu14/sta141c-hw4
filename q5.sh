@@ -3,8 +3,8 @@ DATAFILE="/scratch/transaction.zip"
 REC_ID=15
 unzip -p ${DATAFILE} | 
 	cut --delimiter=, --fields=${REC_ID} |
-	sort --numeric |
+	sort --numeric-sort |
 	uniq --count |
 	sort --reverse |
 	head -30 |
-	cat > most_recv.csv
+	cat > most_rec.csv
