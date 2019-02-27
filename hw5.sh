@@ -45,3 +45,9 @@ cat modified_rec_digit.csv |
     sort --field-separator=, --key=1,1 --numeric-sort |
     uniq --count |
     cat > con_table.csv 
+
+# modify table to be readable
+cat con_table.csv | 
+    sed s/./,/8 | # add a ',' between count and digit
+    tail -n +3 |
+    cat > modified_table.csv 
