@@ -1,4 +1,4 @@
-cat rec_digit.csv | 
-    awk -F, '$1!="0"' |
-    awk -F, '$1!="-"' |
-    cat > modified_rec_digit.csv 
+cat modified_rec_digit.csv |
+    sort --numeric-sort |
+    uniq --count |
+    cat > con_table.csv 
