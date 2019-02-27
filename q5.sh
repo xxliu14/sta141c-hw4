@@ -7,6 +7,6 @@ unzip -p ${DATAFILE} |
 	awk '$2!=""' |
 	sort --field-separator=, --key=1,1 --numeric-sort |
 	uniq --count |
-	sort --field-separator=, --key=1,1 --reverse |
+	sort --field-separator=, --key=1,1 --reverse --numeric-sort |
 	head -30 |
 	cat > most_rec.csv
