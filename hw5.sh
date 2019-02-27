@@ -5,7 +5,7 @@ ACTION_DATE=3
 TOTAL_OBLIGATION=8
 # ref: https://ss64.com/bash/sort.html
 unzip -p ${DATAFILE} | 
-	cut --delimiter=, --fields=${PARENT_},${ACTION_DATE},${TOTAL_OBLIGATION} |
+	cut --delimiter=, --fields=${TOTAL_OBLIGATION},${PARENT_RECIPIENT_ID},${ACTION_DATE} |
     sort --uniq |
 	cat > duplicate_rm_3col.csv
 
