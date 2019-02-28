@@ -6,6 +6,6 @@
 #SBATCH --mail-user=xliu9@ucdavis.edu
 
 # Specify which version of the software you want to use, and make it available
-module load R/3.3.2
+module load R
 
 Rscript testfun.R
