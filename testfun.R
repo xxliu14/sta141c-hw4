@@ -31,6 +31,5 @@ df2 = aggregate(part ~ id, df_temp, sum)
 colnames(df2) = c('id','KLD')
 
 #write.table(df0, file = 'df0.csv',row.names=FALSE, na='',col.names=FALSE, sep=',')
-df2 = aggregate(part_to_sum ~ id, df0, sum)
 write.table(df2, file = 'df2.csv',row.names=FALSE, na='',col.names=FALSE, sep=',')
 
